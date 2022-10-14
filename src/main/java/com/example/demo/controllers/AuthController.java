@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.models.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +22,7 @@ public class AuthController {
     }
 
     @RequestMapping(value = "/process_registration", method = RequestMethod.POST)
-    public String processRegistration(@ModelAttribute("registration_form") @Valid User user) {
+    public String processRegistration(@ModelAttribute("registration_form") @Validated User user) {
         return "registration-form";
     }
 }
